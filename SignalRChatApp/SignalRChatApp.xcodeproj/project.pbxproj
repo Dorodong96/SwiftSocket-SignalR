@@ -1,0 +1,646 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B9AF63C32AEA73470047127A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63C22AEA73470047127A /* AppDelegate.swift */; };
+		B9AF63C52AEA73470047127A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63C42AEA73470047127A /* SceneDelegate.swift */; };
+		B9AF63C72AEA73470047127A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63C62AEA73470047127A /* ViewController.swift */; };
+		B9AF63CA2AEA73470047127A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9AF63C82AEA73470047127A /* Main.storyboard */; };
+		B9AF63CC2AEA73480047127A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9AF63CB2AEA73480047127A /* Assets.xcassets */; };
+		B9AF63CF2AEA73480047127A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9AF63CD2AEA73480047127A /* LaunchScreen.storyboard */; };
+		B9AF63DA2AEA73490047127A /* SignalRChatAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63D92AEA73490047127A /* SignalRChatAppTests.swift */; };
+		B9AF63E42AEA73490047127A /* SignalRChatAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63E32AEA73490047127A /* SignalRChatAppUITests.swift */; };
+		B9AF63E62AEA73490047127A /* SignalRChatAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63E52AEA73490047127A /* SignalRChatAppUITestsLaunchTests.swift */; };
+		B9AF63F42AEA73B00047127A /* SignalRClient in Frameworks */ = {isa = PBXBuildFile; productRef = B9AF63F32AEA73B00047127A /* SignalRClient */; };
+		B9AF63F62AEA74AB0047127A /* SignalRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63F52AEA74AB0047127A /* SignalRService.swift */; };
+		B9AF63F82AEA74E90047127A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63F72AEA74E90047127A /* Message.swift */; };
+		B9AF63FD2AEA76D40047127A /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63FB2AEA76D40047127A /* MessageTableViewCell.swift */; };
+		B9AF63FE2AEA76D40047127A /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AF63FC2AEA76D40047127A /* MessageTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B9AF63D62AEA73490047127A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9AF63B72AEA73470047127A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9AF63BE2AEA73470047127A;
+			remoteInfo = SignalRChatApp;
+		};
+		B9AF63E02AEA73490047127A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9AF63B72AEA73470047127A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9AF63BE2AEA73470047127A;
+			remoteInfo = SignalRChatApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B9AF63BF2AEA73470047127A /* SignalRChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignalRChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9AF63C22AEA73470047127A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B9AF63C42AEA73470047127A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B9AF63C62AEA73470047127A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B9AF63C92AEA73470047127A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B9AF63CB2AEA73480047127A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B9AF63CE2AEA73480047127A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B9AF63D02AEA73480047127A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9AF63D52AEA73490047127A /* SignalRChatAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignalRChatAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9AF63D92AEA73490047127A /* SignalRChatAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRChatAppTests.swift; sourceTree = "<group>"; };
+		B9AF63DF2AEA73490047127A /* SignalRChatAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignalRChatAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9AF63E32AEA73490047127A /* SignalRChatAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRChatAppUITests.swift; sourceTree = "<group>"; };
+		B9AF63E52AEA73490047127A /* SignalRChatAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRChatAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B9AF63F52AEA74AB0047127A /* SignalRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRService.swift; sourceTree = "<group>"; };
+		B9AF63F72AEA74E90047127A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B9AF63FB2AEA76D40047127A /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		B9AF63FC2AEA76D40047127A /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B9AF63BC2AEA73470047127A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9AF63F42AEA73B00047127A /* SignalRClient in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9AF63D22AEA73490047127A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9AF63DC2AEA73490047127A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B9AF63B62AEA73470047127A = {
+			isa = PBXGroup;
+			children = (
+				B9AF63C12AEA73470047127A /* SignalRChatApp */,
+				B9AF63D82AEA73490047127A /* SignalRChatAppTests */,
+				B9AF63E22AEA73490047127A /* SignalRChatAppUITests */,
+				B9AF63C02AEA73470047127A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B9AF63C02AEA73470047127A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B9AF63BF2AEA73470047127A /* SignalRChatApp.app */,
+				B9AF63D52AEA73490047127A /* SignalRChatAppTests.xctest */,
+				B9AF63DF2AEA73490047127A /* SignalRChatAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B9AF63C12AEA73470047127A /* SignalRChatApp */ = {
+			isa = PBXGroup;
+			children = (
+				B9AF63C22AEA73470047127A /* AppDelegate.swift */,
+				B9AF63C42AEA73470047127A /* SceneDelegate.swift */,
+				B9AF63C62AEA73470047127A /* ViewController.swift */,
+				B9AF63C82AEA73470047127A /* Main.storyboard */,
+				B9AF63F52AEA74AB0047127A /* SignalRService.swift */,
+				B9AF63F72AEA74E90047127A /* Message.swift */,
+				B9AF63FB2AEA76D40047127A /* MessageTableViewCell.swift */,
+				B9AF63FC2AEA76D40047127A /* MessageTableViewCell.xib */,
+				B9AF63CB2AEA73480047127A /* Assets.xcassets */,
+				B9AF63CD2AEA73480047127A /* LaunchScreen.storyboard */,
+				B9AF63D02AEA73480047127A /* Info.plist */,
+			);
+			path = SignalRChatApp;
+			sourceTree = "<group>";
+		};
+		B9AF63D82AEA73490047127A /* SignalRChatAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				B9AF63D92AEA73490047127A /* SignalRChatAppTests.swift */,
+			);
+			path = SignalRChatAppTests;
+			sourceTree = "<group>";
+		};
+		B9AF63E22AEA73490047127A /* SignalRChatAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B9AF63E32AEA73490047127A /* SignalRChatAppUITests.swift */,
+				B9AF63E52AEA73490047127A /* SignalRChatAppUITestsLaunchTests.swift */,
+			);
+			path = SignalRChatAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B9AF63BE2AEA73470047127A /* SignalRChatApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9AF63E92AEA73490047127A /* Build configuration list for PBXNativeTarget "SignalRChatApp" */;
+			buildPhases = (
+				B9AF63BB2AEA73470047127A /* Sources */,
+				B9AF63BC2AEA73470047127A /* Frameworks */,
+				B9AF63BD2AEA73470047127A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SignalRChatApp;
+			packageProductDependencies = (
+				B9AF63F32AEA73B00047127A /* SignalRClient */,
+			);
+			productName = SignalRChatApp;
+			productReference = B9AF63BF2AEA73470047127A /* SignalRChatApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B9AF63D42AEA73490047127A /* SignalRChatAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9AF63EC2AEA73490047127A /* Build configuration list for PBXNativeTarget "SignalRChatAppTests" */;
+			buildPhases = (
+				B9AF63D12AEA73490047127A /* Sources */,
+				B9AF63D22AEA73490047127A /* Frameworks */,
+				B9AF63D32AEA73490047127A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9AF63D72AEA73490047127A /* PBXTargetDependency */,
+			);
+			name = SignalRChatAppTests;
+			productName = SignalRChatAppTests;
+			productReference = B9AF63D52AEA73490047127A /* SignalRChatAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B9AF63DE2AEA73490047127A /* SignalRChatAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9AF63EF2AEA73490047127A /* Build configuration list for PBXNativeTarget "SignalRChatAppUITests" */;
+			buildPhases = (
+				B9AF63DB2AEA73490047127A /* Sources */,
+				B9AF63DC2AEA73490047127A /* Frameworks */,
+				B9AF63DD2AEA73490047127A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9AF63E12AEA73490047127A /* PBXTargetDependency */,
+			);
+			name = SignalRChatAppUITests;
+			productName = SignalRChatAppUITests;
+			productReference = B9AF63DF2AEA73490047127A /* SignalRChatAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B9AF63B72AEA73470047127A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					B9AF63BE2AEA73470047127A = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					B9AF63D42AEA73490047127A = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = B9AF63BE2AEA73470047127A;
+					};
+					B9AF63DE2AEA73490047127A = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = B9AF63BE2AEA73470047127A;
+					};
+				};
+			};
+			buildConfigurationList = B9AF63BA2AEA73470047127A /* Build configuration list for PBXProject "SignalRChatApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B9AF63B62AEA73470047127A;
+			packageReferences = (
+				B9AF63F22AEA73B00047127A /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */,
+			);
+			productRefGroup = B9AF63C02AEA73470047127A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B9AF63BE2AEA73470047127A /* SignalRChatApp */,
+				B9AF63D42AEA73490047127A /* SignalRChatAppTests */,
+				B9AF63DE2AEA73490047127A /* SignalRChatAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B9AF63BD2AEA73470047127A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9AF63CF2AEA73480047127A /* LaunchScreen.storyboard in Resources */,
+				B9AF63FE2AEA76D40047127A /* MessageTableViewCell.xib in Resources */,
+				B9AF63CC2AEA73480047127A /* Assets.xcassets in Resources */,
+				B9AF63CA2AEA73470047127A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9AF63D32AEA73490047127A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9AF63DD2AEA73490047127A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B9AF63BB2AEA73470047127A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9AF63F62AEA74AB0047127A /* SignalRService.swift in Sources */,
+				B9AF63C72AEA73470047127A /* ViewController.swift in Sources */,
+				B9AF63F82AEA74E90047127A /* Message.swift in Sources */,
+				B9AF63C32AEA73470047127A /* AppDelegate.swift in Sources */,
+				B9AF63C52AEA73470047127A /* SceneDelegate.swift in Sources */,
+				B9AF63FD2AEA76D40047127A /* MessageTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9AF63D12AEA73490047127A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9AF63DA2AEA73490047127A /* SignalRChatAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9AF63DB2AEA73490047127A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9AF63E42AEA73490047127A /* SignalRChatAppUITests.swift in Sources */,
+				B9AF63E62AEA73490047127A /* SignalRChatAppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B9AF63D72AEA73490047127A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9AF63BE2AEA73470047127A /* SignalRChatApp */;
+			targetProxy = B9AF63D62AEA73490047127A /* PBXContainerItemProxy */;
+		};
+		B9AF63E12AEA73490047127A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9AF63BE2AEA73470047127A /* SignalRChatApp */;
+			targetProxy = B9AF63E02AEA73490047127A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B9AF63C82AEA73470047127A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9AF63C92AEA73470047127A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B9AF63CD2AEA73480047127A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9AF63CE2AEA73480047127A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B9AF63E72AEA73490047127A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B9AF63E82AEA73490047127A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B9AF63EA2AEA73490047127A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SignalRChatApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongkyukim.SignalRChatApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B9AF63EB2AEA73490047127A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BQSHS2D2FB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SignalRChatApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongkyukim.SignalRChatApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B9AF63ED2AEA73490047127A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongkyukim.SignalRChatAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SignalRChatApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SignalRChatApp";
+			};
+			name = Debug;
+		};
+		B9AF63EE2AEA73490047127A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongkyukim.SignalRChatAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SignalRChatApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SignalRChatApp";
+			};
+			name = Release;
+		};
+		B9AF63F02AEA73490047127A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongkyukim.SignalRChatAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SignalRChatApp;
+			};
+			name = Debug;
+		};
+		B9AF63F12AEA73490047127A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongkyukim.SignalRChatAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SignalRChatApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B9AF63BA2AEA73470047127A /* Build configuration list for PBXProject "SignalRChatApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9AF63E72AEA73490047127A /* Debug */,
+				B9AF63E82AEA73490047127A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9AF63E92AEA73490047127A /* Build configuration list for PBXNativeTarget "SignalRChatApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9AF63EA2AEA73490047127A /* Debug */,
+				B9AF63EB2AEA73490047127A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9AF63EC2AEA73490047127A /* Build configuration list for PBXNativeTarget "SignalRChatAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9AF63ED2AEA73490047127A /* Debug */,
+				B9AF63EE2AEA73490047127A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9AF63EF2AEA73490047127A /* Build configuration list for PBXNativeTarget "SignalRChatAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9AF63F02AEA73490047127A /* Debug */,
+				B9AF63F12AEA73490047127A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B9AF63F22AEA73B00047127A /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/moozzyk/SignalR-Client-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B9AF63F32AEA73B00047127A /* SignalRClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9AF63F22AEA73B00047127A /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */;
+			productName = SignalRClient;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = B9AF63B72AEA73470047127A /* Project object */;
+}
