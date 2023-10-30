@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     private var popupKind: PopupKind = .name
     private var errorMessage: String = ""
     private var messages: [Message] = []
-    private var userName: String = ""
+    private var userName: String = "iPhone"
     private var serverURL: String = "http://192.168.80.226:5000/chat"
     private var keyboardHeight: CGFloat = 0
     
@@ -29,6 +29,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var sendStackView: UIStackView!
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
+    
+    @IBAction func sendButtonTapped(_ sender: UIButton) {
+        self.buttonTapped()
+    }
     
     private var alertController: UIAlertController?
     private var saveAction: UIAlertAction?
@@ -49,17 +53,10 @@ class ViewController: UIViewController {
         self.setKeyboardDown()
 
         self.sendButton.setTitle("Send", for: .normal) // 버튼에 표시할 텍스트 설정
-        self.sendButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside) // 액션을 추가
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        self.showPopup()
-    }
-
     private func connectSocket() {
         self.chatHubConnection = HubConnectionBuilder(url: URL(string: self.serverURL)!)
             .withAutoReconnect()
@@ -88,21 +85,6 @@ class ViewController: UIViewController {
     private func showPopup() {
         
         switch popupKind {
-        case .name:
-        
-            alertController = UIAlertController(title: "이름 입력", message: "이름을 입력하세요", preferredStyle: .alert)
-                
-            alertController?.addTextField { textField in
-                textField.placeholder = "이름"
-            }
-            
-            saveAction = UIAlertAction(title: "Done", style: .default) { [weak self] _ in
-                if let name = self?.alertController?.textFields?.first?.text {
-                    self?.userName = name
-                    self?.popupKind = .none
-                }
-            }
-            
         case .error, .errorRestart:
             alertController = UIAlertController(title: "에러", message: self.errorMessage, preferredStyle: .alert)
             saveAction = UIAlertAction(title: "OK", style: .default)
@@ -127,10 +109,12 @@ class ViewController: UIViewController {
     }
     
     @objc func handleTap() {
-        view.endEditing(true)
+        messageTextView.resignFirstResponder()
     }
 
     @objc func buttonTapped() {
+        
+        // self.handleTap()
         
         if self.messageTextView.text == "/dadjoke" {
             chatHubConnection?.invoke(method: "DadJoke", resultType: String.self, invocationDidComplete: { result, error in
@@ -183,10 +167,7 @@ class ViewController: UIViewController {
                 self.messageTextView.text = nil
             }
         }
-        
-        self.handleTap()
     }
-    
 }
 
 extension ViewController: UITableViewDelegate {
@@ -210,31 +191,33 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        moveStackView(self.sendStackView, moveDistance: -self.keyboardHeight, up: true)
+        self.setKeyboardDown()
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        moveStackView(self.sendStackView, moveDistance: -self.keyboardHeight, up: false)
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        return true
     }
     
-    private func moveStackView(_ stackView: UIStackView, moveDistance: CGFloat, up: Bool) {
+    private func moveStackView(_ stackView: UIStackView, moveDistance: CGFloat) {
         let moveDuration = 0.3
-        let movement: CGFloat = up ? moveDistance : 0
+        let movement: CGFloat = moveDistance
 
         UIView.animate(withDuration: moveDuration) {
-            stackView.frame = stackView.frame.offsetBy(dx: 0, dy: movement)
+            
+            stackView.frame = stackView.frame.offsetBy(dx: 0, dy: -movement)
         }
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
-            if let userInfo = notification.userInfo,
-               let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-                let keyboardRect = keyboardFrame.cgRectValue
-                let keyboardHeight = keyboardRect.height
-                
-                self.keyboardHeight = keyboardHeight
-            }
+        if let userInfo = notification.userInfo,
+           let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRect = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRect.height
+            
+            self.keyboardHeight = keyboardHeight
+            self.moveStackView(self.sendStackView, moveDistance: self.keyboardHeight)
         }
+    }
 }
 
 extension ViewController: HubConnectionDelegate {
