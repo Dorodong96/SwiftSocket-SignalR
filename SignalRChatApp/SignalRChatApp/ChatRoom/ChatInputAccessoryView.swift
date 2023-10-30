@@ -8,6 +8,15 @@
 import UIKit
 
 class ChatInputAccessoryView: UIView {
+        
+    
+    lazy var addButton = {
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 20, weight: .semibold)
+        let buttonImage = UIImage(systemName: "plus", withConfiguration: symbolConfiguration)
+        let button = UIButton(image: buttonImage ?? .init(), tintColor: .gray)
+        
+        return button
+    }()
     
     let textView = UITextView()
     let sendButton = UIButton(title: "SEND", titleColor: .black, font: .boldSystemFont(ofSize: 14), target: nil, action: nil)
@@ -29,18 +38,26 @@ class ChatInputAccessoryView: UIView {
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleTextChange), name: UITextView.textDidChangeNotification, object: nil)
         
-        hstack(textView,
+        hstack(addButton.withSize(.init(width: 60, height: 60)), textView,
                        sendButton.withSize(.init(width: 60, height: 60)),
                        alignment: .center
-            ).withMargins(.init(top: 0, left: 16, bottom: 0, right: 16))
+            ).withMargins(.init(top: 0, left: 0, bottom: 0, right: 0))
         
         addSubview(placeholderLabel)
-        placeholderLabel.anchor(top: nil, leading: leadingAnchor, bottom: nil, trailing: sendButton.leadingAnchor, padding: .init(top: 0, left: 20, bottom: 0, right: 0))
+        placeholderLabel.anchor(top: nil, leading: addButton.trailingAnchor, bottom: nil, trailing: sendButton.leadingAnchor, padding: .init(top: 0, left: 10, bottom: 0, right: 0))
         placeholderLabel.centerYAnchor.constraint(equalTo: sendButton.centerYAnchor).isActive = true
     }
     
     @objc func handleTextChange() {
-        placeholderLabel.isHidden = textView.text.count != 0
+        // Placeholder Label isHidden
+        
+        if textView.text.count == 0 || textView.text == nil {
+            placeholderLabel.isHidden = false
+        }
+        
+        if textView.attributedText.length != 0 {
+            placeholderLabel.isHidden = true
+        }
     }
     
     deinit {

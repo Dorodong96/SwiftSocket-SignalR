@@ -28,9 +28,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     lazy var accessoryView: ChatInputAccessoryView = {
-        let accessoryView = ChatInputAccessoryView(frame: .init(x: 0, y: 0, width: view.frame.width, height: 50))
+        let accessoryView = ChatInputAccessoryView(frame: .init(x: 0, y: 0, width: view.frame.width, height: 60))
         accessoryView.translatesAutoresizingMaskIntoConstraints = false
-        accessoryView.sendButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        accessoryView.addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+        accessoryView.sendButton.addTarget(self, action: #selector(sendButtonTapped), for: .touchUpInside)
         return accessoryView
     }()
     
@@ -133,7 +134,7 @@ class ViewController: UIViewController {
         let indexPath = IndexPath(row: messages.count - 1, section: 0)
         self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         
-        self.messageTextView.text = nil
+        self.messageTextView.text = ""
     }
 
     @objc func hideKeyboard(_ sender: Any) {
@@ -141,7 +142,7 @@ class ViewController: UIViewController {
         self.accessoryView.endEditing(true)
     }
     
-    @objc func buttonTapped() {
+    @objc func sendButtonTapped() {
         
         if self.messageTextView.text == "/dadjoke" {
             chatHubConnection?.invoke(method: "DadJoke", resultType: String.self, invocationDidComplete: { result, error in
@@ -283,6 +284,71 @@ extension ViewController: HubConnectionDelegate {
     func connectionDidReconnect() {
         popupKind = .none
         self.alertController?.dismiss(animated: true)
+    }
+}
+
+extension ViewController {
+    @objc
+    private func addButtonTapped() {
+        self.accessoryView.endEditing(true)
+        
+        let alertController = UIAlertController(title: "이미지 선택", message: "이미지를 어디서 가져올까요?", preferredStyle: .actionSheet)
+
+            // 카메라로 가져오기
+            let takePhotoAction = UIAlertAction(title: "카메라로 사진 찍기", style: .default) { (action) in
+                self.presentImagePicker(sourceType: .camera)
+            }
+                
+            // 앨범에서 가져오기
+            let choosePhotoAction = UIAlertAction(title: "앨범에서 사진 선택", style: .default) { (action) in
+                self.presentImagePicker(sourceType: .photoLibrary)
+            }
+
+            // 취소
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+
+            alertController.addAction(takePhotoAction)
+            alertController.addAction(choosePhotoAction)
+            alertController.addAction(cancelAction)
+
+            self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentImagePicker(sourceType: UIImagePickerController.SourceType) {
+        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = sourceType
+            imagePicker.delegate = self
+            self.present(imagePicker, animated: true, completion: nil)
+        } else {
+            // 선택한 소스 타입이 사용 불가능한 경우에 대한 처리
+        }
+    }
+}
+
+extension ViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    // UIImagePickerControllerDelegate 메서드 구현
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[.originalImage] as? UIImage {
+            
+            let text = NSMutableAttributedString(string: self.messageTextView.text, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16.0)])
+            
+            let imageAttachment = NSTextAttachment()
+            imageAttachment.image = selectedImage.resizeImage(width: 100, height: 100)
+            let imageString = NSAttributedString(attachment: imageAttachment)
+            
+            text.append(imageString)
+            text.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 16.0), range: NSRange(location: 0, length: text.length))
+            
+            self.accessoryView.placeholderLabel.isHidden = true
+            self.messageTextView.attributedText = text
+        }
+        picker.dismiss(animated: true, completion: nil) 
+        self.setChatInputAccesoryViewLayout()
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }
 

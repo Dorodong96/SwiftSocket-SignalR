@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90EA4962AEF9CB700FCD0E0 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90EA4952AEF9CB700FCD0E0 /* UIImage+.swift */; };
 		B948B0FB2AEF809F00D922EE /* ChatInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948B0FA2AEF809F00D922EE /* ChatInputAccessoryView.swift */; };
 		B948B0FE2AEF812900D922EE /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948B0FD2AEF812900D922EE /* UIButton+.swift */; };
 		B948B1002AEF815C00D922EE /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948B0FF2AEF815C00D922EE /* UILabel+.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B90EA4952AEF9CB700FCD0E0 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		B948B0FA2AEF809F00D922EE /* ChatInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputAccessoryView.swift; sourceTree = "<group>"; };
 		B948B0FD2AEF812900D922EE /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		B948B0FF2AEF815C00D922EE /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				B948B0FF2AEF815C00D922EE /* UILabel+.swift */,
 				B948B1012AEF81C200D922EE /* UIView+.swift */,
 				B948B1032AEF82EA00D922EE /* UIStackView+.swift */,
+				B90EA4952AEF9CB700FCD0E0 /* UIImage+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				B9AF63C32AEA73470047127A /* AppDelegate.swift in Sources */,
 				B9AF63C52AEA73470047127A /* SceneDelegate.swift in Sources */,
 				B948B1042AEF82EA00D922EE /* UIStackView+.swift in Sources */,
+				B90EA4962AEF9CB700FCD0E0 /* UIImage+.swift in Sources */,
 				B9AF63FD2AEA76D40047127A /* MessageTableViewCell.swift in Sources */,
 				B948B0FE2AEF812900D922EE /* UIButton+.swift in Sources */,
 			);
@@ -504,6 +508,8 @@
 				DEVELOPMENT_TEAM = BQSHS2D2FB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SignalRChatApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진을 촬영하기 위한 권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범에서 사진을 가져오기 위한 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -532,6 +538,8 @@
 				DEVELOPMENT_TEAM = BQSHS2D2FB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SignalRChatApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진을 촬영하기 위한 권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범에서 사진을 가져오기 위한 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
