@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B948B0FB2AEF809F00D922EE /* ChatInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948B0FA2AEF809F00D922EE /* ChatInputAccessoryView.swift */; };
+		B948B0FE2AEF812900D922EE /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948B0FD2AEF812900D922EE /* UIButton+.swift */; };
+		B948B1002AEF815C00D922EE /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948B0FF2AEF815C00D922EE /* UILabel+.swift */; };
+		B948B1022AEF81C200D922EE /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948B1012AEF81C200D922EE /* UIView+.swift */; };
+		B948B1042AEF82EA00D922EE /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948B1032AEF82EA00D922EE /* UIStackView+.swift */; };
 		B9AF63C32AEA73470047127A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63C22AEA73470047127A /* AppDelegate.swift */; };
 		B9AF63C52AEA73470047127A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63C42AEA73470047127A /* SceneDelegate.swift */; };
 		B9AF63C72AEA73470047127A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63C62AEA73470047127A /* ViewController.swift */; };
@@ -40,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B948B0FA2AEF809F00D922EE /* ChatInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputAccessoryView.swift; sourceTree = "<group>"; };
+		B948B0FD2AEF812900D922EE /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		B948B0FF2AEF815C00D922EE /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		B948B1012AEF81C200D922EE /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		B948B1032AEF82EA00D922EE /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		B9AF63BF2AEA73470047127A /* SignalRChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignalRChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9AF63C22AEA73470047127A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9AF63C42AEA73470047127A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +99,7 @@
 			children = (
 				B9AF63C82AEA73470047127A /* Main.storyboard */,
 				B9AF63C62AEA73470047127A /* ViewController.swift */,
+				B948B0FA2AEF809F00D922EE /* ChatInputAccessoryView.swift */,
 			);
 			path = ChatRoom;
 			sourceTree = "<group>";
@@ -99,6 +110,17 @@
 				B9AF63FB2AEA76D40047127A /* MessageTableViewCell.swift */,
 			);
 			path = MessageTableViewCell;
+			sourceTree = "<group>";
+		};
+		B948B0FC2AEF811C00D922EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B948B0FD2AEF812900D922EE /* UIButton+.swift */,
+				B948B0FF2AEF815C00D922EE /* UILabel+.swift */,
+				B948B1012AEF81C200D922EE /* UIView+.swift */,
+				B948B1032AEF82EA00D922EE /* UIStackView+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B9AF63B62AEA73470047127A = {
@@ -130,6 +152,7 @@
 				B9AF63F72AEA74E90047127A /* Message.swift */,
 				B948B0F82AEF28F200D922EE /* ChatRoom */,
 				B948B0F92AEF537C00D922EE /* MessageTableViewCell */,
+				B948B0FC2AEF811C00D922EE /* Extensions */,
 				B9AF63CB2AEA73480047127A /* Assets.xcassets */,
 				B9AF63CD2AEA73480047127A /* LaunchScreen.storyboard */,
 				B9AF63D02AEA73480047127A /* Info.plist */,
@@ -292,11 +315,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9AF63F62AEA74AB0047127A /* SignalRService.swift in Sources */,
+				B948B0FB2AEF809F00D922EE /* ChatInputAccessoryView.swift in Sources */,
 				B9AF63C72AEA73470047127A /* ViewController.swift in Sources */,
 				B9AF63F82AEA74E90047127A /* Message.swift in Sources */,
+				B948B1022AEF81C200D922EE /* UIView+.swift in Sources */,
+				B948B1002AEF815C00D922EE /* UILabel+.swift in Sources */,
 				B9AF63C32AEA73470047127A /* AppDelegate.swift in Sources */,
 				B9AF63C52AEA73470047127A /* SceneDelegate.swift in Sources */,
+				B948B1042AEF82EA00D922EE /* UIStackView+.swift in Sources */,
 				B9AF63FD2AEA76D40047127A /* MessageTableViewCell.swift in Sources */,
+				B948B0FE2AEF812900D922EE /* UIButton+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

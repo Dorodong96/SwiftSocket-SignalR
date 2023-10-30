@@ -20,46 +20,17 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="699"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2eU-N1-Ygh">
-                                <rect key="frame" x="20" y="772" width="353" height="60"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="l9P-VY-zti">
-                                        <rect key="frame" x="0.0" y="0.0" width="278" height="60"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIw-e9-2gu">
-                                        <rect key="frame" x="278" y="0.0" width="75" height="60"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                        <connections>
-                                            <action selector="sendButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7F9-JV-TXD"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="v4Z-aw-Wm8"/>
-                                </constraints>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="NI0-7j-a0O" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-60" id="GnC-L9-8Zb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2eU-N1-Ygh" secondAttribute="trailing" constant="20" id="L4U-TI-X64"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NI0-7j-a0O" secondAttribute="trailing" id="NqG-q0-i3s"/>
-                            <constraint firstAttribute="bottom" secondItem="2eU-N1-Ygh" secondAttribute="bottom" constant="20" id="e3o-Q3-oHy"/>
                             <constraint firstItem="NI0-7j-a0O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eBj-H6-V9Y"/>
-                            <constraint firstItem="2eU-N1-Ygh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oou-Tc-l6M"/>
                             <constraint firstItem="NI0-7j-a0O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="t3H-eS-T0w"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="messageTextView" destination="l9P-VY-zti" id="6Nh-M2-HGm"/>
-                        <outlet property="sendButton" destination="eIw-e9-2gu" id="QsO-Y0-w8D"/>
-                        <outlet property="sendStackView" destination="2eU-N1-Ygh" id="vXj-qu-JxV"/>
                         <outlet property="tableView" destination="NI0-7j-a0O" id="nuB-FG-NvN"/>
                     </connections>
                 </viewController>
@@ -69,9 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

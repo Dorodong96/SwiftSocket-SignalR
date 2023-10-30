@@ -26,12 +26,23 @@ class ViewController: UIViewController {
     private var keyboardHeight: CGFloat = 0
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var sendStackView: UIStackView!
-    @IBOutlet weak var messageTextView: UITextView!
-    @IBOutlet weak var sendButton: UIButton!
     
-    @IBAction func sendButtonTapped(_ sender: UIButton) {
-        self.buttonTapped()
+    lazy var accessoryView: ChatInputAccessoryView = {
+        let accessoryView = ChatInputAccessoryView(frame: .init(x: 0, y: 0, width: view.frame.width, height: 50))
+        accessoryView.translatesAutoresizingMaskIntoConstraints = false
+        accessoryView.sendButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        return accessoryView
+    }()
+    
+    lazy var messageTextView: UITextView = {
+        let textView = self.accessoryView.textView
+        return textView
+    }()
+    
+    override var inputAccessoryView: UIView? {
+        get {
+            return accessoryView
+        }
     }
     
     private var alertController: UIAlertController?
@@ -46,23 +57,27 @@ class ViewController: UIViewController {
         if let userName = UserDefaults.standard.string(forKey: "UserName") {
             self.userName = userName
         }
+        self.setChatInputAccesoryViewLayout()
         
-        self.messageTextView.delegate = self
+        self.messageTextView.inputAccessoryView = self.accessoryView
+        self.addTapGesture()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
         self.tableView.separatorStyle = .none
+        self.tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: MessageTableViewCell.identifier)
         
         self.connectSocket()
-        self.registerXib()
-        self.setKeyboardDown()
-
-        self.sendButton.setTitle("Send", for: .normal) // 버튼에 표시할 텍스트 설정
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    deinit {
+        // 알림 구독 해제
+        NotificationCenter.default.removeObserver(self)
+    }
     
     private func connectSocket() {
         self.chatHubConnection = HubConnectionBuilder(url: URL(string: self.serverURL)!)
@@ -78,13 +93,8 @@ class ViewController: UIViewController {
         self.chatHubConnection?.start()
     }
     
-    private func registerXib() {
-        // let nibName = UINib(nibName: MessageTableViewCell.identifier, bundle: nil)
-        tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: MessageTableViewCell.identifier)
-    }
-    
-    private func setKeyboardDown() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+    private func addTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         self.view.addGestureRecognizer(tapGesture)
     }
     
@@ -125,14 +135,13 @@ class ViewController: UIViewController {
         
         self.messageTextView.text = nil
     }
-    
-    @objc func handleTap() {
-        messageTextView.resignFirstResponder()
-    }
 
+    @objc func hideKeyboard(_ sender: Any) {
+        self.setChatInputAccesoryViewLayout()
+        self.accessoryView.endEditing(true)
+    }
+    
     @objc func buttonTapped() {
-        
-        // self.handleTap()
         
         if self.messageTextView.text == "/dadjoke" {
             chatHubConnection?.invoke(method: "DadJoke", resultType: String.self, invocationDidComplete: { result, error in
@@ -181,6 +190,14 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    private func setChatInputAccesoryViewLayout() {
+        self.view.addSubview(accessoryView)
+        
+        self.accessoryView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 12).isActive = true
+        self.accessoryView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -12).isActive = true
+        self.accessoryView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -12).isActive = true
+    }
 }
 
 extension ViewController: UITableViewDelegate {
@@ -193,9 +210,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MessageTableViewCell.identifier, for: indexPath) as! MessageTableViewCell
-        
-//        cell.nameLabel.text = messages[indexPath.row].name
-//        cell.messageLabel.text = messages[indexPath.row].text
+
         cell.config(name: messages[indexPath.row].name, message: messages[indexPath.row].text)
         
         return cell
@@ -203,24 +218,7 @@ extension ViewController: UITableViewDataSource {
 
 }
 
-extension ViewController: UITextViewDelegate {
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        self.setKeyboardDown()
-    }
-    
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-        return true
-    }
-    
-    private func moveStackView(_ stackView: UIStackView, moveDistance: CGFloat) {
-        let moveDuration = 0.3
-        let movement: CGFloat = moveDistance
-
-        UIView.animate(withDuration: moveDuration) {
-            
-            stackView.frame = stackView.frame.offsetBy(dx: 0, dy: -movement)
-        }
-    }
+extension ViewController {
     
     @objc func keyboardWillShow(_ notification: Notification) {
         if let userInfo = notification.userInfo,
@@ -229,8 +227,27 @@ extension ViewController: UITextViewDelegate {
             let keyboardHeight = keyboardRect.height
             
             self.keyboardHeight = keyboardHeight
-            self.moveStackView(self.sendStackView, moveDistance: self.keyboardHeight)
+            
+            if keyboardHeight > 0 {
+                self.tableView.setContentOffset(CGPoint(x: self.tableView.bounds.minX, y: self.tableView.bounds.minY), animated: false)
+            }
+            
+            self.tableView.contentInset.bottom = keyboardHeight - 60
+            self.tableView.verticalScrollIndicatorInsets.bottom = .zero
+            
+            
+            if !self.messages.isEmpty {
+                let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            }
         }
+        
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        // 키보드 사라질 때 contentInset 및 scrollIndicatorInsets 초기화
+        tableView.contentInset = .zero
+        tableView.scrollIndicatorInsets = .zero
     }
 }
 
@@ -242,14 +259,14 @@ extension ViewController: HubConnectionDelegate {
     }
     
     func connectionDidFailToOpen(error: Error) {
-        errorMessage = "\(error.localizedDescription)"
+        errorMessage = "\(error.localizedDescription)" + "에러타입 1"
         popupKind = .errorRestart
         showPopup()
     }
     
     func connectionDidClose(error: Error?) {
         if let e = error {
-            errorMessage = "\(e.localizedDescription)"
+            errorMessage = "\(e.localizedDescription)" + "에러타입 2"
             popupKind = .errorRestart
             showPopup()
 
@@ -268,3 +285,23 @@ extension ViewController: HubConnectionDelegate {
         self.alertController?.dismiss(animated: true)
     }
 }
+
+/**
+ RxKeyboard.instance.visibleHeight
+   .distinctUntilChanged()
+   .asDriver(onErrorDriveWith: .empty())
+   .drive(onNext: { [weak self] height in
+     guard let self = self else { return }
+     var keyboardHeight:CGFloat = 0
+     if height > 0 {
+       keyboardHeight = height - UIApplication.shared.windows.first!.safeAreaInsets.bottom
+       self.tableView.setContentOffset(CGPoint(x: self.tableView.bounds.minX, y: self.tableView.bounds.minY + keyboardHeight), animated: false)
+     } else {
+       keyboardHeight = height
+       self.tableView.setContentOffset(CGPoint(x: self.tableView.bounds.minX, y: self.tableView.bounds.minY - self.tableView.contentInset.bottom), animated: false)
+     }
+     self.tableView.contentInset.bottom = keyboardHeight
+     self.tableView.verticalScrollIndicatorInsets.bottom = keyboardHeight
+   })
+   .disposed(by: disposeBag)
+**/
