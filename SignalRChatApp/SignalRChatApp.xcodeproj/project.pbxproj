@@ -20,7 +20,6 @@
 		B9AF63F62AEA74AB0047127A /* SignalRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63F52AEA74AB0047127A /* SignalRService.swift */; };
 		B9AF63F82AEA74E90047127A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63F72AEA74E90047127A /* Message.swift */; };
 		B9AF63FD2AEA76D40047127A /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63FB2AEA76D40047127A /* MessageTableViewCell.swift */; };
-		B9AF63FE2AEA76D40047127A /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AF63FC2AEA76D40047127A /* MessageTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +56,6 @@
 		B9AF63F52AEA74AB0047127A /* SignalRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRService.swift; sourceTree = "<group>"; };
 		B9AF63F72AEA74E90047127A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B9AF63FB2AEA76D40047127A /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
-		B9AF63FC2AEA76D40047127A /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +96,6 @@
 		B948B0F92AEF537C00D922EE /* MessageTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				B9AF63FC2AEA76D40047127A /* MessageTableViewCell.xib */,
 				B9AF63FB2AEA76D40047127A /* MessageTableViewCell.swift */,
 			);
 			path = MessageTableViewCell;
@@ -268,7 +265,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9AF63CF2AEA73480047127A /* LaunchScreen.storyboard in Resources */,
-				B9AF63FE2AEA76D40047127A /* MessageTableViewCell.xib in Resources */,
 				B9AF63CC2AEA73480047127A /* Assets.xcassets in Resources */,
 				B9AF63CA2AEA73470047127A /* Main.storyboard in Resources */,
 			);

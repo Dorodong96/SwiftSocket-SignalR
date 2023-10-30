@@ -43,10 +43,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let userName = UserDefaults.standard.string(forKey: "UserName") {
+            self.userName = userName
+        }
+        
         self.messageTextView.delegate = self
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        self.tableView.separatorStyle = .none
         
         self.connectSocket()
         self.registerXib()
@@ -57,6 +63,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
+    
     private func connectSocket() {
         self.chatHubConnection = HubConnectionBuilder(url: URL(string: self.serverURL)!)
             .withAutoReconnect()
@@ -65,16 +72,15 @@ class ViewController: UIViewController {
         self.chatHubConnection?.delegate = self
         
         self.chatHubConnection?.on(method: "NewMessage", callback: { (message: Message) in
-            self.messages.append(message)
-            self.tableView.reloadData()
+            self.addMessage(message: message)
         })
         
         self.chatHubConnection?.start()
     }
     
     private func registerXib() {
-        let nibName = UINib(nibName: MessageTableViewCell.identifier, bundle: nil)
-        tableView.register(nibName, forCellReuseIdentifier: MessageTableViewCell.identifier)
+        // let nibName = UINib(nibName: MessageTableViewCell.identifier, bundle: nil)
+        tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: MessageTableViewCell.identifier)
     }
     
     private func setKeyboardDown() {
@@ -108,6 +114,18 @@ class ViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    private func addMessage(message: Message) {
+        
+        self.messages.append(message)
+        
+        self.tableView.reloadData()
+        
+        let indexPath = IndexPath(row: messages.count - 1, section: 0)
+        self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        
+        self.messageTextView.text = nil
+    }
+    
     @objc func handleTap() {
         messageTextView.resignFirstResponder()
     }
@@ -123,9 +141,7 @@ class ViewController: UIViewController {
                     self.popupKind = .error
                     self.showPopup()
                 } else {
-                    self.messages.append(Message(name: "Dad", text: result ?? "Dad is tired today"))
-                    self.tableView.reloadData()
-                    self.messageTextView.text = nil
+                    self.addMessage(message: Message(name: "Dad", text: "Dad is tired today"))
                 }
             })
             return
@@ -137,12 +153,9 @@ class ViewController: UIViewController {
             }
             
             streamHandle = chatHubConnection?.stream(method: "CountDown", 5, streamItemReceived: { (n: Int) in
-                self.messages.append(Message(name: "Counter", text: "\(n)"))
-                self.tableView.reloadData()
+                self.addMessage(message: Message(name: "Counter", text: "\(n)"))
             }, invocationDidComplete: { error in
-                self.messages.append(Message(name: "Counter", text: "Counting Finished!"))
-                self.streamHandle = nil
-                self.tableView.reloadData()
+                self.addMessage(message: Message(name: "Counter", text: "Counting Finished!"))
             })
             
             self.messageTextView.text = nil
@@ -181,8 +194,9 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MessageTableViewCell.identifier, for: indexPath) as! MessageTableViewCell
         
-        cell.nameLabel.text = messages[indexPath.row].name
-        cell.messageLabel.text = messages[indexPath.row].text
+//        cell.nameLabel.text = messages[indexPath.row].name
+//        cell.messageLabel.text = messages[indexPath.row].text
+        cell.config(name: messages[indexPath.row].name, message: messages[indexPath.row].text)
         
         return cell
     }
