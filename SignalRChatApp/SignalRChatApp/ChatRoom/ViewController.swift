@@ -129,9 +129,8 @@ class ViewController: UIViewController {
         
         self.messages.append(message)
         
-        self.tableView.reloadData()
-        
-        let indexPath = IndexPath(row: messages.count - 1, section: 0)
+        let indexPath = IndexPath(row: messages.count-1, section: 0)
+        self.tableView.insertRows(at: [indexPath], with: .bottom)
         self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         
         self.messageTextView.text = ""

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B90EA4962AEF9CB700FCD0E0 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90EA4952AEF9CB700FCD0E0 /* UIImage+.swift */; };
+		B90EA4992AF0A36500FCD0E0 /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90EA4982AF0A36500FCD0E0 /* MessageLabel.swift */; };
 		B948B0FB2AEF809F00D922EE /* ChatInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948B0FA2AEF809F00D922EE /* ChatInputAccessoryView.swift */; };
 		B948B0FE2AEF812900D922EE /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948B0FD2AEF812900D922EE /* UIButton+.swift */; };
 		B948B1002AEF815C00D922EE /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948B0FF2AEF815C00D922EE /* UILabel+.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		B90EA4952AEF9CB700FCD0E0 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		B90EA4982AF0A36500FCD0E0 /* MessageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
 		B948B0FA2AEF809F00D922EE /* ChatInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputAccessoryView.swift; sourceTree = "<group>"; };
 		B948B0FD2AEF812900D922EE /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		B948B0FF2AEF815C00D922EE /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B90EA4972AF0A33F00FCD0E0 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B90EA4982AF0A36500FCD0E0 /* MessageLabel.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		B948B0F82AEF28F200D922EE /* ChatRoom */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 				B948B0F82AEF28F200D922EE /* ChatRoom */,
 				B948B0F92AEF537C00D922EE /* MessageTableViewCell */,
 				B948B0FC2AEF811C00D922EE /* Extensions */,
+				B90EA4972AF0A33F00FCD0E0 /* Utility */,
 				B9AF63CB2AEA73480047127A /* Assets.xcassets */,
 				B9AF63CD2AEA73480047127A /* LaunchScreen.storyboard */,
 				B9AF63D02AEA73480047127A /* Info.plist */,
@@ -323,6 +334,7 @@
 				B9AF63F82AEA74E90047127A /* Message.swift in Sources */,
 				B948B1022AEF81C200D922EE /* UIView+.swift in Sources */,
 				B948B1002AEF815C00D922EE /* UILabel+.swift in Sources */,
+				B90EA4992AF0A36500FCD0E0 /* MessageLabel.swift in Sources */,
 				B9AF63C32AEA73470047127A /* AppDelegate.swift in Sources */,
 				B9AF63C52AEA73470047127A /* SceneDelegate.swift in Sources */,
 				B948B1042AEF82EA00D922EE /* UIStackView+.swift in Sources */,

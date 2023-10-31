@@ -17,18 +17,21 @@ private enum MessageType {
 class MessageTableViewCell: UITableViewCell {
     
     static let identifier: String = "MessageTableViewCell"
+    private var cellType: MessageType = .receiveText
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 21)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private lazy var messageLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+    private lazy var messageLabel: MessageLabel = {
+        let label = MessageLabel()
+        label.font = UIFont.systemFont(ofSize: 20)
         label.numberOfLines = 0
+        label.layer.cornerRadius = 5.0
+        label.layer.masksToBounds = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -43,9 +46,9 @@ class MessageTableViewCell: UITableViewCell {
         
         guard let userName = UserDefaults.standard.string(forKey: "UserName") else { return }
         if userName == name {
-            self.setLayout(type: .sendText)
+            self.cellType = .sendText
         } else {
-            self.setLayout(type: .receiveText)
+            self.cellType = .receiveText
         }
         
     }
@@ -60,21 +63,41 @@ class MessageTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    private func setLayout(type: MessageType) {
+    override func layoutIfNeeded() {
         self.addSubview(nameLabel)
         self.addSubview(messageLabel)
         
-        nameLabel.textAlignment = (type == .receiveText || type == .receiveImage) ? .left : .right
+        nameLabel.textAlignment = (self.cellType == .receiveText || self.cellType == .receiveImage) ? .left : .right
         nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
-        messageLabel.textAlignment = (type == .receiveText || type == .receiveImage) ? .left : .right
-        messageLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 12).isActive = true
-        messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
-        messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
-        messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12).isActive = true
+        let ratioInset = UIScreen.main.bounds.size.width / 3
+        
+        switch self.cellType {
+            
+        case .receiveText, .receiveImage:
+            messageLabel.textAlignment = .left
+            messageLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 12).isActive = true
+            messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
+            messageLabel.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, constant: ratioInset * 2).isActive = true
+            messageLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -ratioInset).isActive = true
+            messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12).isActive = true
+            
+            messageLabel.backgroundColor = .cyan
+            
+        case .sendText, .sendImage:
+            messageLabel.textAlignment = .right
+            messageLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 12).isActive = true
+            messageLabel.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: ratioInset).isActive = true
+            messageLabel.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, constant: ratioInset * 2).isActive = true
+            messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+            messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12).isActive = true
+            
+            messageLabel.backgroundColor = .orange
+            
+        }
     }
     
 }
