@@ -10,7 +10,7 @@ import UIKit
 class ChatInputAccessoryView: UIView {
         
     
-    lazy var addButton = {
+    lazy var addButton: UIButton = {
         let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 20, weight: .semibold)
         let buttonImage = UIImage(systemName: "plus", withConfiguration: symbolConfiguration)
         let button = UIButton(image: buttonImage ?? .init(), tintColor: .gray)
@@ -19,7 +19,11 @@ class ChatInputAccessoryView: UIView {
     }()
     
     let textView = UITextView()
-    let sendButton = UIButton(title: "SEND", titleColor: .black, font: .boldSystemFont(ofSize: 14), target: nil, action: nil)
+    
+    lazy var sendButton: UIButton = {
+        let button = UIButton(title: "SEND", titleColor: .black, font: .boldSystemFont(ofSize: 14), target: nil, action: nil)
+        return button
+    }()
     
     let placeholderLabel = UILabel(text: "Enter Message", font: .systemFont(ofSize: 16), textColor: .lightGray)
     

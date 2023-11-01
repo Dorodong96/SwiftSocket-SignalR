@@ -16,7 +16,7 @@ private enum MessageType {
 
 class MessageTableViewCell: UITableViewCell {
     
-    static let identifier: String = "MessageTableViewCell"
+    static let reuseIdentifier: String = "MessageTableViewCell"
     private var cellType: MessageType = .receiveText
     
     private lazy var nameLabel: UILabel = {

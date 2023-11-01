@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		B90EA4962AEF9CB700FCD0E0 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90EA4952AEF9CB700FCD0E0 /* UIImage+.swift */; };
 		B90EA4992AF0A36500FCD0E0 /* MessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90EA4982AF0A36500FCD0E0 /* MessageLabel.swift */; };
+		B90EA49C2AF0B97C00FCD0E0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B90EA49B2AF0B97C00FCD0E0 /* RxCocoa */; };
+		B90EA49E2AF0B97C00FCD0E0 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B90EA49D2AF0B97C00FCD0E0 /* RxRelay */; };
+		B90EA4A02AF0B97C00FCD0E0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B90EA49F2AF0B97C00FCD0E0 /* RxSwift */; };
+		B90EA4A52AF0C2C900FCD0E0 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = B90EA4A42AF0C2C900FCD0E0 /* ReactorKit */; };
+		B90EA4AA2AF0C97900FCD0E0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90EA4A82AF0C97900FCD0E0 /* ChatViewController.swift */; };
+		B90EA4B52AF0CCCB00FCD0E0 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90EA4B42AF0CCCB00FCD0E0 /* ChatViewModel.swift */; };
+		B90EA4B82AF0CDDB00FCD0E0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B90EA4B72AF0CDDB00FCD0E0 /* SnapKit */; };
+		B90EA4BA2AF0D11600FCD0E0 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90EA4B92AF0D11600FCD0E0 /* UIViewController+.swift */; };
 		B948B0FB2AEF809F00D922EE /* ChatInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948B0FA2AEF809F00D922EE /* ChatInputAccessoryView.swift */; };
 		B948B0FE2AEF812900D922EE /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948B0FD2AEF812900D922EE /* UIButton+.swift */; };
 		B948B1002AEF815C00D922EE /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948B0FF2AEF815C00D922EE /* UILabel+.swift */; };
@@ -20,35 +28,18 @@
 		B9AF63CA2AEA73470047127A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9AF63C82AEA73470047127A /* Main.storyboard */; };
 		B9AF63CC2AEA73480047127A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9AF63CB2AEA73480047127A /* Assets.xcassets */; };
 		B9AF63CF2AEA73480047127A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9AF63CD2AEA73480047127A /* LaunchScreen.storyboard */; };
-		B9AF63DA2AEA73490047127A /* SignalRChatAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63D92AEA73490047127A /* SignalRChatAppTests.swift */; };
-		B9AF63E42AEA73490047127A /* SignalRChatAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63E32AEA73490047127A /* SignalRChatAppUITests.swift */; };
-		B9AF63E62AEA73490047127A /* SignalRChatAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63E52AEA73490047127A /* SignalRChatAppUITestsLaunchTests.swift */; };
 		B9AF63F42AEA73B00047127A /* SignalRClient in Frameworks */ = {isa = PBXBuildFile; productRef = B9AF63F32AEA73B00047127A /* SignalRClient */; };
 		B9AF63F62AEA74AB0047127A /* SignalRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63F52AEA74AB0047127A /* SignalRService.swift */; };
 		B9AF63F82AEA74E90047127A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63F72AEA74E90047127A /* Message.swift */; };
 		B9AF63FD2AEA76D40047127A /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63FB2AEA76D40047127A /* MessageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B9AF63D62AEA73490047127A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9AF63B72AEA73470047127A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B9AF63BE2AEA73470047127A;
-			remoteInfo = SignalRChatApp;
-		};
-		B9AF63E02AEA73490047127A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9AF63B72AEA73470047127A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B9AF63BE2AEA73470047127A;
-			remoteInfo = SignalRChatApp;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		B90EA4952AEF9CB700FCD0E0 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		B90EA4982AF0A36500FCD0E0 /* MessageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLabel.swift; sourceTree = "<group>"; };
+		B90EA4A82AF0C97900FCD0E0 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		B90EA4B42AF0CCCB00FCD0E0 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		B90EA4B92AF0D11600FCD0E0 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		B948B0FA2AEF809F00D922EE /* ChatInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputAccessoryView.swift; sourceTree = "<group>"; };
 		B948B0FD2AEF812900D922EE /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		B948B0FF2AEF815C00D922EE /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
@@ -62,9 +53,7 @@
 		B9AF63CB2AEA73480047127A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9AF63CE2AEA73480047127A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9AF63D02AEA73480047127A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9AF63D52AEA73490047127A /* SignalRChatAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignalRChatAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9AF63D92AEA73490047127A /* SignalRChatAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRChatAppTests.swift; sourceTree = "<group>"; };
-		B9AF63DF2AEA73490047127A /* SignalRChatAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignalRChatAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9AF63E32AEA73490047127A /* SignalRChatAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRChatAppUITests.swift; sourceTree = "<group>"; };
 		B9AF63E52AEA73490047127A /* SignalRChatAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRChatAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B9AF63F52AEA74AB0047127A /* SignalRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRService.swift; sourceTree = "<group>"; };
@@ -77,21 +66,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B90EA49E2AF0B97C00FCD0E0 /* RxRelay in Frameworks */,
+				B90EA49C2AF0B97C00FCD0E0 /* RxCocoa in Frameworks */,
+				B90EA4B82AF0CDDB00FCD0E0 /* SnapKit in Frameworks */,
+				B90EA4A02AF0B97C00FCD0E0 /* RxSwift in Frameworks */,
+				B90EA4A52AF0C2C900FCD0E0 /* ReactorKit in Frameworks */,
 				B9AF63F42AEA73B00047127A /* SignalRClient in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9AF63D22AEA73490047127A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9AF63DC2AEA73490047127A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +92,8 @@
 				B9AF63C82AEA73470047127A /* Main.storyboard */,
 				B9AF63C62AEA73470047127A /* ViewController.swift */,
 				B948B0FA2AEF809F00D922EE /* ChatInputAccessoryView.swift */,
+				B90EA4A82AF0C97900FCD0E0 /* ChatViewController.swift */,
+				B90EA4B42AF0CCCB00FCD0E0 /* ChatViewModel.swift */,
 			);
 			path = ChatRoom;
 			sourceTree = "<group>";
@@ -132,6 +114,7 @@
 				B948B1012AEF81C200D922EE /* UIView+.swift */,
 				B948B1032AEF82EA00D922EE /* UIStackView+.swift */,
 				B90EA4952AEF9CB700FCD0E0 /* UIImage+.swift */,
+				B90EA4B92AF0D11600FCD0E0 /* UIViewController+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -150,8 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				B9AF63BF2AEA73470047127A /* SignalRChatApp.app */,
-				B9AF63D52AEA73490047127A /* SignalRChatAppTests.xctest */,
-				B9AF63DF2AEA73490047127A /* SignalRChatAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,46 +190,15 @@
 			name = SignalRChatApp;
 			packageProductDependencies = (
 				B9AF63F32AEA73B00047127A /* SignalRClient */,
+				B90EA49B2AF0B97C00FCD0E0 /* RxCocoa */,
+				B90EA49D2AF0B97C00FCD0E0 /* RxRelay */,
+				B90EA49F2AF0B97C00FCD0E0 /* RxSwift */,
+				B90EA4A42AF0C2C900FCD0E0 /* ReactorKit */,
+				B90EA4B72AF0CDDB00FCD0E0 /* SnapKit */,
 			);
 			productName = SignalRChatApp;
 			productReference = B9AF63BF2AEA73470047127A /* SignalRChatApp.app */;
 			productType = "com.apple.product-type.application";
-		};
-		B9AF63D42AEA73490047127A /* SignalRChatAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B9AF63EC2AEA73490047127A /* Build configuration list for PBXNativeTarget "SignalRChatAppTests" */;
-			buildPhases = (
-				B9AF63D12AEA73490047127A /* Sources */,
-				B9AF63D22AEA73490047127A /* Frameworks */,
-				B9AF63D32AEA73490047127A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B9AF63D72AEA73490047127A /* PBXTargetDependency */,
-			);
-			name = SignalRChatAppTests;
-			productName = SignalRChatAppTests;
-			productReference = B9AF63D52AEA73490047127A /* SignalRChatAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		B9AF63DE2AEA73490047127A /* SignalRChatAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B9AF63EF2AEA73490047127A /* Build configuration list for PBXNativeTarget "SignalRChatAppUITests" */;
-			buildPhases = (
-				B9AF63DB2AEA73490047127A /* Sources */,
-				B9AF63DC2AEA73490047127A /* Frameworks */,
-				B9AF63DD2AEA73490047127A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B9AF63E12AEA73490047127A /* PBXTargetDependency */,
-			);
-			name = SignalRChatAppUITests;
-			productName = SignalRChatAppUITests;
-			productReference = B9AF63DF2AEA73490047127A /* SignalRChatAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -263,14 +213,6 @@
 					B9AF63BE2AEA73470047127A = {
 						CreatedOnToolsVersion = 14.3;
 					};
-					B9AF63D42AEA73490047127A = {
-						CreatedOnToolsVersion = 14.3;
-						TestTargetID = B9AF63BE2AEA73470047127A;
-					};
-					B9AF63DE2AEA73490047127A = {
-						CreatedOnToolsVersion = 14.3;
-						TestTargetID = B9AF63BE2AEA73470047127A;
-					};
 				};
 			};
 			buildConfigurationList = B9AF63BA2AEA73470047127A /* Build configuration list for PBXProject "SignalRChatApp" */;
@@ -284,14 +226,15 @@
 			mainGroup = B9AF63B62AEA73470047127A;
 			packageReferences = (
 				B9AF63F22AEA73B00047127A /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */,
+				B90EA49A2AF0B97C00FCD0E0 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B90EA4A32AF0C2C900FCD0E0 /* XCRemoteSwiftPackageReference "ReactorKit" */,
+				B90EA4B62AF0CDDB00FCD0E0 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = B9AF63C02AEA73470047127A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				B9AF63BE2AEA73470047127A /* SignalRChatApp */,
-				B9AF63D42AEA73490047127A /* SignalRChatAppTests */,
-				B9AF63DE2AEA73490047127A /* SignalRChatAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -304,20 +247,6 @@
 				B9AF63CF2AEA73480047127A /* LaunchScreen.storyboard in Resources */,
 				B9AF63CC2AEA73480047127A /* Assets.xcassets in Resources */,
 				B9AF63CA2AEA73470047127A /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9AF63D32AEA73490047127A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9AF63DD2AEA73490047127A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,43 +267,16 @@
 				B9AF63C32AEA73470047127A /* AppDelegate.swift in Sources */,
 				B9AF63C52AEA73470047127A /* SceneDelegate.swift in Sources */,
 				B948B1042AEF82EA00D922EE /* UIStackView+.swift in Sources */,
+				B90EA4BA2AF0D11600FCD0E0 /* UIViewController+.swift in Sources */,
+				B90EA4AA2AF0C97900FCD0E0 /* ChatViewController.swift in Sources */,
 				B90EA4962AEF9CB700FCD0E0 /* UIImage+.swift in Sources */,
 				B9AF63FD2AEA76D40047127A /* MessageTableViewCell.swift in Sources */,
+				B90EA4B52AF0CCCB00FCD0E0 /* ChatViewModel.swift in Sources */,
 				B948B0FE2AEF812900D922EE /* UIButton+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B9AF63D12AEA73490047127A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B9AF63DA2AEA73490047127A /* SignalRChatAppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9AF63DB2AEA73490047127A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B9AF63E42AEA73490047127A /* SignalRChatAppUITests.swift in Sources */,
-				B9AF63E62AEA73490047127A /* SignalRChatAppUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B9AF63D72AEA73490047127A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B9AF63BE2AEA73470047127A /* SignalRChatApp */;
-			targetProxy = B9AF63D62AEA73490047127A /* PBXContainerItemProxy */;
-		};
-		B9AF63E12AEA73490047127A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B9AF63BE2AEA73470047127A /* SignalRChatApp */;
-			targetProxy = B9AF63E02AEA73490047127A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B9AF63C82AEA73470047127A /* Main.storyboard */ = {
@@ -432,6 +334,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -524,9 +427,9 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범에서 사진을 가져오기 위한 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -554,9 +457,9 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범에서 사진을 가져오기 위한 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -567,78 +470,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		B9AF63ED2AEA73490047127A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dongkyukim.SignalRChatAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SignalRChatApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SignalRChatApp";
-			};
-			name = Debug;
-		};
-		B9AF63EE2AEA73490047127A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dongkyukim.SignalRChatAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SignalRChatApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SignalRChatApp";
-			};
-			name = Release;
-		};
-		B9AF63F02AEA73490047127A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dongkyukim.SignalRChatAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SignalRChatApp;
-			};
-			name = Debug;
-		};
-		B9AF63F12AEA73490047127A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dongkyukim.SignalRChatAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SignalRChatApp;
 			};
 			name = Release;
 		};
@@ -663,27 +494,33 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B9AF63EC2AEA73490047127A /* Build configuration list for PBXNativeTarget "SignalRChatAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B9AF63ED2AEA73490047127A /* Debug */,
-				B9AF63EE2AEA73490047127A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B9AF63EF2AEA73490047127A /* Build configuration list for PBXNativeTarget "SignalRChatAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B9AF63F02AEA73490047127A /* Debug */,
-				B9AF63F12AEA73490047127A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B90EA49A2AF0B97C00FCD0E0 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		B90EA4A32AF0C2C900FCD0E0 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactorKit/ReactorKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		B90EA4B62AF0CDDB00FCD0E0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		B9AF63F22AEA73B00047127A /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/moozzyk/SignalR-Client-Swift";
@@ -695,6 +532,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B90EA49B2AF0B97C00FCD0E0 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B90EA49A2AF0B97C00FCD0E0 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		B90EA49D2AF0B97C00FCD0E0 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B90EA49A2AF0B97C00FCD0E0 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		B90EA49F2AF0B97C00FCD0E0 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B90EA49A2AF0B97C00FCD0E0 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		B90EA4A42AF0C2C900FCD0E0 /* ReactorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B90EA4A32AF0C2C900FCD0E0 /* XCRemoteSwiftPackageReference "ReactorKit" */;
+			productName = ReactorKit;
+		};
+		B90EA4B72AF0CDDB00FCD0E0 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B90EA4B62AF0CDDB00FCD0E0 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		B9AF63F32AEA73B00047127A /* SignalRClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B9AF63F22AEA73B00047127A /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */;

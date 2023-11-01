@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         self.tableView.dataSource = self
         
         self.tableView.separatorStyle = .none
-        self.tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: MessageTableViewCell.identifier)
+        self.tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: MessageTableViewCell.reuseIdentifier)
         
         self.connectSocket()
         
@@ -95,7 +95,7 @@ class ViewController: UIViewController {
     }
     
     private func addTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardDown))
         self.view.addGestureRecognizer(tapGesture)
     }
     
@@ -136,7 +136,7 @@ class ViewController: UIViewController {
         self.messageTextView.text = ""
     }
 
-    @objc func hideKeyboard(_ sender: Any) {
+    @objc func hideKeyboardDown(_ sender: Any) {
         self.setChatInputAccesoryViewLayout()
         self.accessoryView.endEditing(true)
     }
@@ -209,7 +209,7 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MessageTableViewCell.identifier, for: indexPath) as! MessageTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MessageTableViewCell.reuseIdentifier, for: indexPath) as! MessageTableViewCell
 
         cell.config(name: messages[indexPath.row].name, message: messages[indexPath.row].text)
         
@@ -241,7 +241,6 @@ extension ViewController {
                 self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
             }
         }
-        
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
