@@ -28,7 +28,7 @@ class ChatViewModel: Reactor {
     lazy var chatMessagesObservable: Observable<ChatMessages> = chatMessageSubject.asObservable()
     
     enum Action {
-        case sendMessage(Message)
+        case tapSendButton(String?)
     }
     
     enum Mutation {
@@ -51,13 +51,15 @@ class ChatViewModel: Reactor {
 extension ChatViewModel {
     
     func mutate(action: Action) -> Observable<Mutation> {
+        
         switch action {
-        case .sendMessage(let message):
-            print(message)
-            self.signalRService.sendMessage(message: message)
+        case .tapSendButton(let text):
+            let message = Message(name: UserDefaults.standard.string(forKey: "UserName")!, text: text ?? "")
+            signalRService.sendMessage(message: message)
             return .empty()
         }
     }
+
     
     func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
         
@@ -102,7 +104,7 @@ extension ChatViewModel {
             }
         }
         
-        return Observable.merge(eventMutation)
+        return Observable.merge(mutation, eventMutation)
     }
     
     // Mutation -> State

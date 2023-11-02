@@ -46,7 +46,7 @@ public class SignalRService {
     }
     
     func sendMessage(message: Message) {
-        print("Message Send \(message)")
+        print("Message Send: \(message)")
         connection.send(method: "Broadcast", message) { error in
             if let error {
                 self.publishEvent.onNext(.sendFail(error))

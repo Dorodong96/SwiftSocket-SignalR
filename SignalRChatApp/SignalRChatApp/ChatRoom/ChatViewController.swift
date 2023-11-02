@@ -22,29 +22,23 @@ class ChatViewController: UIViewController, View {
         return tableView
     }()
     
-    private lazy var accessoryView: ChatInputAccessoryView = {
-        let accessoryView = ChatInputAccessoryView(frame: .init(x: 0, y: 0, width: view.frame.width, height: 60))
-        accessoryView.sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
-        return accessoryView
-    }()
-    
-    @objc func sendMessage() {
-        let message = Message(name: UserDefaults.standard.string(forKey: "UserName") ?? "", text: messageTextView.text ?? "")
-        reactor?.signalRService.sendMessage(message: message)
-    }
-    
     private lazy var messageTextView: UITextView = {
         let textView = self.accessoryView.textView
         textView.inputAccessoryView = self.accessoryView
         return textView
     }()
     
-    private var alertController: UIAlertController?
-    private var saveAction: UIAlertAction?
+    private lazy var accessoryView: ChatInputAccessoryView = {
+        let accessoryView = ChatInputAccessoryView(frame: .init(x: 0, y: 0, width: view.frame.width, height: 60))
+        return accessoryView
+    }()
     
     override var inputAccessoryView: UIView? {
         get { return accessoryView }
     }
+    
+    private var alertController: UIAlertController?
+    private var saveAction: UIAlertAction?
     
     
     override func viewDidLoad() {
@@ -70,15 +64,13 @@ class ChatViewController: UIViewController, View {
         // action (View -> Reactor)
         // Reactor Action의 sendMessage case 타입으로 매핑해서
         // reactor의 Action에 바인딩
-//        accessoryView.sendButton.rx.tap
-//            .withLatestFrom(messageTextView.rx.text)
-//            .withUnretained(self)
-//            .map { weakSelf, text in
-//                let message = Message(name: UserDefaults.standard.string(forKey: "UserName") ?? "", text: text ?? "")
-//                return Reactor.Action.sendMessage(message)
-//            }
-//            .bind(to: reactor.action)
-//            .disposed(by: disposeBag)
+        
+        accessoryView.sendButton.rx.tap
+            .withLatestFrom(messageTextView.rx.text)
+            .filter { $0 != nil && !$0!.isEmpty }
+            .map { Reactor.Action.tapSendButton($0) }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
         // Data Binding
         reactor.chatMessagesObservable

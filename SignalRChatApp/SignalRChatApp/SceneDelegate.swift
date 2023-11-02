@@ -27,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(windowScene: windowScene) // SceneDelegate의 프로퍼티에 설정해줌
         let viewModel = ChatViewModel(domainURL: "http://192.168.80.226:5000/chat")
+        
         let mainViewController = ChatViewController() // 맨 처음 보여줄 ViewController
         mainViewController.reactor = viewModel
         
