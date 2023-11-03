@@ -53,6 +53,9 @@ class ChatViewController: UIViewController, View {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        reactor?.action.onNext(.viewAppear)
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.removeKeyboardObserver()

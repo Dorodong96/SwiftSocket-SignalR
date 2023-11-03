@@ -32,6 +32,10 @@
 		B9AF63F62AEA74AB0047127A /* SignalRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63F52AEA74AB0047127A /* SignalRService.swift */; };
 		B9AF63F82AEA74E90047127A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63F72AEA74E90047127A /* Message.swift */; };
 		B9AF63FD2AEA76D40047127A /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AF63FB2AEA76D40047127A /* MessageTableViewCell.swift */; };
+		B9DB50DB2AF4BE3700B1EC85 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = B9DB50DA2AF4BE3700B1EC85 /* Realm */; };
+		B9DB50DD2AF4BE3700B1EC85 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B9DB50DC2AF4BE3700B1EC85 /* RealmSwift */; };
+		B9DB50DF2AF4D4E300B1EC85 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB50DE2AF4D4E300B1EC85 /* DatabaseManager.swift */; };
+		B9DB50E12AF4D84B00B1EC85 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB50E02AF4D84B00B1EC85 /* Date+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,8 @@
 		B9AF63F52AEA74AB0047127A /* SignalRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRService.swift; sourceTree = "<group>"; };
 		B9AF63F72AEA74E90047127A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B9AF63FB2AEA76D40047127A /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		B9DB50DE2AF4D4E300B1EC85 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		B9DB50E02AF4D84B00B1EC85 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9DB50DD2AF4BE3700B1EC85 /* RealmSwift in Frameworks */,
+				B9DB50DB2AF4BE3700B1EC85 /* Realm in Frameworks */,
 				B90EA49E2AF0B97C00FCD0E0 /* RxRelay in Frameworks */,
 				B90EA49C2AF0B97C00FCD0E0 /* RxCocoa in Frameworks */,
 				B90EA4B82AF0CDDB00FCD0E0 /* SnapKit in Frameworks */,
@@ -115,6 +123,7 @@
 				B948B1032AEF82EA00D922EE /* UIStackView+.swift */,
 				B90EA4952AEF9CB700FCD0E0 /* UIImage+.swift */,
 				B90EA4B92AF0D11600FCD0E0 /* UIViewController+.swift */,
+				B9DB50E02AF4D84B00B1EC85 /* Date+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -151,6 +160,7 @@
 				B9AF63CB2AEA73480047127A /* Assets.xcassets */,
 				B9AF63CD2AEA73480047127A /* LaunchScreen.storyboard */,
 				B9AF63D02AEA73480047127A /* Info.plist */,
+				B9DB50DE2AF4D4E300B1EC85 /* DatabaseManager.swift */,
 			);
 			path = SignalRChatApp;
 			sourceTree = "<group>";
@@ -195,6 +205,8 @@
 				B90EA49F2AF0B97C00FCD0E0 /* RxSwift */,
 				B90EA4A42AF0C2C900FCD0E0 /* ReactorKit */,
 				B90EA4B72AF0CDDB00FCD0E0 /* SnapKit */,
+				B9DB50DA2AF4BE3700B1EC85 /* Realm */,
+				B9DB50DC2AF4BE3700B1EC85 /* RealmSwift */,
 			);
 			productName = SignalRChatApp;
 			productReference = B9AF63BF2AEA73470047127A /* SignalRChatApp.app */;
@@ -229,6 +241,7 @@
 				B90EA49A2AF0B97C00FCD0E0 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				B90EA4A32AF0C2C900FCD0E0 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				B90EA4B62AF0CDDB00FCD0E0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B9DB50D92AF4BE3700B1EC85 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = B9AF63C02AEA73470047127A /* Products */;
 			projectDirPath = "";
@@ -261,10 +274,12 @@
 				B948B0FB2AEF809F00D922EE /* ChatInputAccessoryView.swift in Sources */,
 				B9AF63C72AEA73470047127A /* ViewController.swift in Sources */,
 				B9AF63F82AEA74E90047127A /* Message.swift in Sources */,
+				B9DB50DF2AF4D4E300B1EC85 /* DatabaseManager.swift in Sources */,
 				B948B1022AEF81C200D922EE /* UIView+.swift in Sources */,
 				B948B1002AEF815C00D922EE /* UILabel+.swift in Sources */,
 				B90EA4992AF0A36500FCD0E0 /* MessageLabel.swift in Sources */,
 				B9AF63C32AEA73470047127A /* AppDelegate.swift in Sources */,
+				B9DB50E12AF4D84B00B1EC85 /* Date+.swift in Sources */,
 				B9AF63C52AEA73470047127A /* SceneDelegate.swift in Sources */,
 				B948B1042AEF82EA00D922EE /* UIStackView+.swift in Sources */,
 				B90EA4BA2AF0D11600FCD0E0 /* UIViewController+.swift in Sources */,
@@ -529,6 +544,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		B9DB50D92AF4BE3700B1EC85 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -561,6 +584,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B9AF63F22AEA73B00047127A /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */;
 			productName = SignalRClient;
+		};
+		B9DB50DA2AF4BE3700B1EC85 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9DB50D92AF4BE3700B1EC85 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		B9DB50DC2AF4BE3700B1EC85 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9DB50D92AF4BE3700B1EC85 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

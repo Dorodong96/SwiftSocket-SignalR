@@ -24,14 +24,18 @@ class ChatViewModel: Reactor {
     private var chatMessages: ChatMessages = []
     
     var signalRService: SignalRService
+    private let databaseManager = DatabaseManager.shared
+    
     private lazy var chatMessageSubject = PublishSubject<ChatMessages>()
     lazy var chatMessagesObservable: Observable<ChatMessages> = chatMessageSubject.asObservable()
     
     enum Action {
+        case viewAppear
         case tapSendButton(String?)
     }
     
     enum Mutation {
+        case getMessages
         case receiveMessage(Message)
         case mutateHubConnection(HubConnectionState)
     }
@@ -53,6 +57,9 @@ extension ChatViewModel {
     func mutate(action: Action) -> Observable<Mutation> {
         
         switch action {
+        case .viewAppear:
+            return .just(.getMessages)
+            
         case .tapSendButton(let text):
             let message = Message(name: UserDefaults.standard.string(forKey: "UserName")!, text: text ?? "")
             signalRService.sendMessage(message: message)
@@ -114,8 +121,13 @@ extension ChatViewModel {
         
         switch mutation {
 
+        case .getMessages:
+            self.chatMessages = databaseManager.loadMessages()
+            self.chatMessageSubject.onNext(self.chatMessages)
+            
         case .receiveMessage(let message):
             state.receivedMessage = message
+            databaseManager.saveMessage(message: message)
             
         case .mutateHubConnection(let hubConnectionState):
             state.hubConnectionState = hubConnectionState

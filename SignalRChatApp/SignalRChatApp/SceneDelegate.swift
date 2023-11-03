@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let userDefaults = UserDefaults.standard
         let randomInt = Int.random(in: 1000...9999)
-        let userName = "iPhone \(randomInt)"
+        // let userName = "iPhone \(randomInt)"
+        let userName = "iPhone 0000"
         userDefaults.set(userName, forKey: "UserName")
         userDefaults.synchronize()
         
