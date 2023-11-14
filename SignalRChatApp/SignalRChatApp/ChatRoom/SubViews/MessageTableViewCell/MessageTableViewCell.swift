@@ -85,7 +85,7 @@ class MessageTableViewCell: UITableViewCell {
             messageLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -ratioInset).isActive = true
             messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12).isActive = true
             
-            messageLabel.backgroundColor = .cyan
+            messageLabel.backgroundColor = UIColor(red: 0.902, green: 0.918, blue: 0.941, alpha: 1.0)
             
         case .sendText, .sendImage:
             messageLabel.textAlignment = .right
@@ -95,7 +95,7 @@ class MessageTableViewCell: UITableViewCell {
             messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
             messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12).isActive = true
             
-            messageLabel.backgroundColor = .orange
+            messageLabel.backgroundColor = UIColor(red: 0.839, green: 0.922, blue: 1.000, alpha: 1.0)
             
         }
     }

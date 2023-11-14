@@ -97,11 +97,11 @@
 		B948B0F82AEF28F200D922EE /* ChatRoom */ = {
 			isa = PBXGroup;
 			children = (
+				B9DB50F52AF6798100B1EC85 /* View */,
+				B9DB50F72AF6799D00B1EC85 /* SubViews */,
+				B9DB50F62AF6798700B1EC85 /* ViewModel */,
 				B9AF63C82AEA73470047127A /* Main.storyboard */,
 				B9AF63C62AEA73470047127A /* ViewController.swift */,
-				B948B0FA2AEF809F00D922EE /* ChatInputAccessoryView.swift */,
-				B90EA4A82AF0C97900FCD0E0 /* ChatViewController.swift */,
-				B90EA4B42AF0CCCB00FCD0E0 /* ChatViewModel.swift */,
 			);
 			path = ChatRoom;
 			sourceTree = "<group>";
@@ -154,7 +154,6 @@
 				B9AF63F52AEA74AB0047127A /* SignalRService.swift */,
 				B9AF63F72AEA74E90047127A /* Message.swift */,
 				B948B0F82AEF28F200D922EE /* ChatRoom */,
-				B948B0F92AEF537C00D922EE /* MessageTableViewCell */,
 				B948B0FC2AEF811C00D922EE /* Extensions */,
 				B90EA4972AF0A33F00FCD0E0 /* Utility */,
 				B9AF63CB2AEA73480047127A /* Assets.xcassets */,
@@ -180,6 +179,31 @@
 				B9AF63E52AEA73490047127A /* SignalRChatAppUITestsLaunchTests.swift */,
 			);
 			path = SignalRChatAppUITests;
+			sourceTree = "<group>";
+		};
+		B9DB50F52AF6798100B1EC85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B90EA4A82AF0C97900FCD0E0 /* ChatViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9DB50F62AF6798700B1EC85 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B90EA4B42AF0CCCB00FCD0E0 /* ChatViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B9DB50F72AF6799D00B1EC85 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				B948B0F92AEF537C00D922EE /* MessageTableViewCell */,
+				B948B0FA2AEF809F00D922EE /* ChatInputAccessoryView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
